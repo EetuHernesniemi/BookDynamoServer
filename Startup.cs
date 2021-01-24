@@ -23,7 +23,7 @@ namespace BookDynamoServer
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                app.UseDeveloperExceptionPage(); //display error messages if development environment / not production build
             }
             DefaultFilesOptions options = new DefaultFilesOptions();
             options.DefaultFileNames.Clear(); //Clear default document file names such as default.html, default.htm and index.htm.
