@@ -25,16 +25,11 @@ namespace BookDynamoServer
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseRouting();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
-            });
+            DefaultFilesOptions options = new DefaultFilesOptions();
+            options.DefaultFileNames.Clear(); //Clear default document file names such as default.html, default.htm and index.htm.
+            options.DefaultFileNames.Add("index.html");
+            app.UseDefaultFiles(options); //More info at: https://docs.microsoft.com/en-us/aspnet/core/fundamentals/static-files?view=aspnetcore-5.0
+            app.UseStaticFiles(); //enables use of wwwroot folder
         }
     }
 }
