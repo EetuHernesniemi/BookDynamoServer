@@ -29,7 +29,7 @@ namespace BookDynamoServer
             options.DefaultFileNames.Clear(); //Clear default document file names such as default.html, default.htm and index.htm.
             options.DefaultFileNames.Add("index.html");
             app.UseDefaultFiles(options); //More info at: https://docs.microsoft.com/en-us/aspnet/core/fundamentals/static-files?view=aspnetcore-5.0
-            app.UseStaticFiles(); //enables use of wwwroot folder
+            app.UseStaticFiles(); //enables use of wwwroot folder to serve files
         }
     }
 }
